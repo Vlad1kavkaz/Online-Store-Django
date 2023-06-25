@@ -1,0 +1,50 @@
+body{
+    background: white;
+}
+
+aside {
+    float: left;
+    background: #f57327;
+    width: 15%;
+    padding: 1.5%;
+    height: 100vh;
+    color: black;
+}
+
+aside a{
+    color: black;
+}
+
+aside li {
+    list-style: none;
+}
+
+aside li a{
+    text-decoration: none;
+    margin-top: 20px;
+    trasition: transform .6s ease;
+    display: block;
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+aside div {
+    margin-top: 20px;
+}
+
+aside li {
+    margin-top: 20px;
+}
+
+aside li a:hover {
+    color: gray;
+    font-size: 1.05em;
+}
+
+aside img {
+    width: 95%;
+    float: left;
+    margin: auto;
+    border-radius: 20%;
+}
