@@ -7,14 +7,11 @@
 <meta name="robots" content="index,follow" />
 <meta name="keywords" content="Пекарня Хлеб 24" />
 <meta name="description" content="Пекарня Хлеб 24 заказать онлайн с доставкой можно в интернет-магазине Хлеб 24. Условия доставки на сайте." />
-<link href="https://s.myspar.ru/bitrix/js/main/core/css/core.css?16847990663963" type="text/css" rel="stylesheet" />
+
 
 <script type="text/javascript" data-skip-moving="true">(function(w, d, n) {var cl = "bx-core";var ht = d.documentElement;var htc = ht ? ht.className : undefined;if (htc === undefined || htc.indexOf(cl) !== -1){return;}var ua = n.userAgent;if (/(iPad;)|(iPhone;)/i.test(ua)){cl += " bx-ios";}else if (/Android/i.test(ua)){cl += " bx-android";}cl += (/(ipad|iphone|android|mobile|touch)/i.test(ua) ? " bx-touch" : " bx-no-touch");cl += w.devicePixelRatio && w.devicePixelRatio >= 2? " bx-retina": " bx-no-retina";var ieVersion = -1;if (/AppleWebKit/.test(ua)){cl += " bx-chrome";}else if ((ieVersion = getIeVersion()) > 0){cl += " bx-ie bx-ie" + ieVersion;if (ieVersion > 7 && ieVersion < 10 && !isDoctype()){cl += " bx-quirks";}}else if (/Opera/.test(ua)){cl += " bx-opera";}else if (/Gecko/.test(ua)){cl += " bx-firefox";}if (/Macintosh/i.test(ua)){cl += " bx-mac";}ht.className = htc ? htc + " " + cl : cl;function isDoctype(){if (d.compatMode){return d.compatMode == "CSS1Compat";}return d.documentElement && d.documentElement.clientHeight;}function getIeVersion(){if (/Opera/i.test(ua) || /Webkit/i.test(ua) || /Firefox/i.test(ua) || /Chrome/i.test(ua)){return -1;}var rv = -1;if (!!(w.MSStream) && !(w.ActiveXObject) && ("ActiveXObject" in w)){rv = 11;}else if (!!d.documentMode && d.documentMode >= 10){rv = 10;}else if (!!d.documentMode && d.documentMode >= 9){rv = 9;}else if (d.attachEvent && !/Opera/.test(ua)){rv = 8;}if (rv == -1 || rv == 8){var re;if (n.appName == "Microsoft Internet Explorer"){re = new RegExp("MSIE ([0-9]+[\.0-9]*)");if (re.exec(ua) != null){rv = parseFloat(RegExp.$1);}}else if (n.appName == "Netscape"){rv = 11;re = new RegExp("Trident/.*rv:([0-9]+[\.0-9]*)");if (re.exec(ua) != null){rv = parseFloat(RegExp.$1);}}}return rv;}})(window, document, navigator);</script>
 
-
-<link href="https://s.myspar.ru/bitrix/cache/css/s1/2019/page_16e14ba750e4486cdcc9cb69ec4c3fa9/page_16e14ba750e4486cdcc9cb69ec4c3fa9_v1.css?16855261055995" type="text/css"  rel="stylesheet" />
-<link href="https://s.myspar.ru/bitrix/cache/css/s1/2019/default_c1d14018da18127c3fca85c330116e28/default_c1d14018da18127c3fca85c330116e28_v1.css?168552610219109" type="text/css"  rel="stylesheet" />
-<link href="https://s.myspar.ru/bitrix/cache/css/s1/2019/template_86a331a225b81991efe102ff505a05ef/template_86a331a225b81991efe102ff505a05ef_v1.css?1686024649297939" type="text/css"  data-template-style="true" rel="stylesheet" />
+<link rel="stylesheet", href="{% static 'main/home.css' %}">
 
 
 
@@ -45,9 +42,6 @@
 <meta property="vk:image" content="https://s.myspar.ru/local/templates/2019/img/spar-og-vk-logo.png"/>
 <meta property="og:image:secure_url" content="https://s.myspar.ru/local/templates/2019/img/spar-og-logo.png"/>
 
-
-
-	<!-- Google Tag Manager -->
 <script data-skip-moving="true" >
 	addEventListener( 'DOMContentLoaded', function( event ) {
 		setTimeout( function() {
@@ -67,12 +61,12 @@
 		}, 3000 )
 	} );
 </script>
-<!-- End Google Tag Manager -->
+
 
 <script src="https://s.myspar.ru/local/templates/2019/js/plugins/sbwiki.js?v=6" async data-skip-moving="true"></script></head>
-<body ontouchstart=""><!-- Google Tag Manager (noscript) -->
+<body ontouchstart="">
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WXSX65L" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) --><header class="header">
+<header class="header">
 						<div class="header__main js-header-main">
 				<div class="container-spread">
 					<div class="header-table">
@@ -84,9 +78,9 @@
 			<div class="header__bottom js-header-fixed">
 				<div class="container-spread">
 					<div class="header-fixed js-city-confirm-anchor">
-						<div class="header-main"><div class="header-main__catalog"><a href="/catalog/" class="btn btn--form btn--big header-catalog-btn no-touch-style js-catalog-menu-toggle">
+						<div class="header-main"><div class="header-main__catalog"><a href="{% url 'katalog' %}" class="btn btn--form btn--big header-catalog-btn no-touch-style js-catalog-menu-toggle">
 	<svg class="icon icon--catalog-bold"><use xlink:href="https://myspar.ru/local/templates/2019/svg/all.svg?1686024625#catalog-bold"></use></svg>	<span class="d-none d-sm-flex">Каталог</span>
-</a></div><!--'start_frame_cache_header-main'--><div class="header-main__search"><div class="header-control search-input js-search-input">
+</a></div><div class="header-main__search"><div class="header-control search-input js-search-input">
 	<svg class="icon icon--search"><use xlink:href="https://myspar.ru/local/templates/2019/svg/all.svg?1686024625#search"></use></svg>	<span class="header-control__text d-none d-md-block">
 		<span class="header-control__text-main grey">Поиск</span>
 	</span>
@@ -758,79 +752,15 @@
 									</div>
 									<div class="menu-catalog__submenu"><div class="menu-catalog__item">
 												<a href="/catalog/mangal/" class="menu-catalog__link">
-													<span class="menu-catalog__text">Уголь, мангал, розжиг</span>
+													<span class="menu-catalog__text">Баранина</span>
 												</a>
 											</div><div class="menu-catalog__item">
 												<a href="/catalog/myaso-dlya-shashlyka/" class="menu-catalog__link">
-													<span class="menu-catalog__text">Мясо для барбекю</span>
+													<span class="menu-catalog__text">Свинина</span>
 												</a>
 											</div><div class="menu-catalog__item">
 												<a href="/catalog/steyki-dlya-grilya/" class="menu-catalog__link">
-													<span class="menu-catalog__text">Стейки</span>
-												</a>
-											</div><div class="menu-catalog__item">
-												<a href="/catalog/sosiski-kolbaski/" class="menu-catalog__link">
-													<span class="menu-catalog__text">Колбаски, купаты</span>
-												</a>
-											</div><div class="menu-catalog__item">
-												<a href="/catalog/ryba-dlya-grilya/" class="menu-catalog__link">
-													<span class="menu-catalog__text">Рыба, морепродукты для гриля</span>
-												</a>
-											</div><div class="menu-catalog__item">
-												<a href="/catalog/lepeshki-lavash-syr-dlya-grilya/" class="menu-catalog__link">
-													<span class="menu-catalog__text">Лепешки, лаваш, сыр для гриля</span>
-												</a>
-											</div><div class="menu-catalog__item">
-												<a href="/catalog/morozhenoe-3/" class="menu-catalog__link">
-													<span class="menu-catalog__text">Мороженое</span>
-												</a>
-											</div><div class="menu-catalog__item">
-												<a href="/catalog/ovoshchi-dlya-grilya/" class="menu-catalog__link">
-													<span class="menu-catalog__text">Овощи, грибы для пикника</span>
-												</a>
-											</div><div class="menu-catalog__item">
-												<a href="/catalog/sezonnye-frukty-i-yagody/" class="menu-catalog__link">
-													<span class="menu-catalog__text">Сезонные фрукты и ягоды</span>
-												</a>
-											</div><div class="menu-catalog__item">
-												<a href="/catalog/sousy-i-marinady/" class="menu-catalog__link">
-													<span class="menu-catalog__text">Соусы и маринады</span>
-												</a>
-											</div><div class="menu-catalog__item">
-												<a href="/catalog/posuda-salfetki/" class="menu-catalog__link">
-													<span class="menu-catalog__text">Посуда, салфетки</span>
-												</a>
-											</div><div class="menu-catalog__item">
-												<a href="/catalog/bezalkogolnoe-vino-pivo-6/" class="menu-catalog__link">
-													<span class="menu-catalog__text">Безалкогольное вино, пиво</span>
-												</a>
-											</div><div class="menu-catalog__item">
-												<a href="/catalog/zashchita-ot-solntsa/" class="menu-catalog__link">
-													<span class="menu-catalog__text">Защита от солнца</span>
-												</a>
-											</div><div class="menu-catalog__item">
-												<a href="/catalog/kvas-kvasnye-napitki-1/" class="menu-catalog__link">
-													<span class="menu-catalog__text">Квас, квасные напитки</span>
-												</a>
-											</div><div class="menu-catalog__item">
-												<a href="/catalog/napitki-spar-1/" class="menu-catalog__link">
-													<span class="menu-catalog__text">Напитки SPAR</span>
-												</a>
-											</div><div class="menu-catalog__item">
-												<a href="/catalog/piknik-doma/" class="menu-catalog__link">
-													<span class="menu-catalog__text">Пикник дома</span>
-												</a>
-											</div><div class="menu-catalog__item">
-												<a href="/catalog/sneki-3/" class="menu-catalog__link">
-													<span class="menu-catalog__text">Снеки</span>
-												</a>
-											</div><div class="menu-catalog__item">
-												<a href="/catalog/spichki-zazhigalki/" class="menu-catalog__link">
-													<span class="menu-catalog__text">Спички, зажигалки</span>
-												</a>
-											</div><div class="menu-catalog__item">
-												<a href="/catalog/sredstva-ot-nasekomykh-2/" class="menu-catalog__link">
-													<span class="menu-catalog__text">Средства от насекомых</span>
+													<span class="menu-catalog__text">Курица</span>
 												</a>
 											</div></div>
 								</div>
