@@ -5234,7 +5234,7 @@ h3 {
 
 .mfp-close,
 .mfp-arrow,
-.mfp-preloader,
+.mfp-stylesheeter,
 .mfp-counter {
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -5249,7 +5249,7 @@ h3 {
   display: none !important;
 }
 
-.mfp-preloader {
+.mfp-stylesheeter {
   color: #ffffff;
   position: absolute;
   top: 50%;
@@ -5261,15 +5261,15 @@ h3 {
   z-index: 921;
 }
 
-.mfp-preloader a {
+.mfp-stylesheeter a {
   color: #ffffff;
 }
 
-.mfp-preloader a:hover {
+.mfp-stylesheeter a:hover {
   color: #ffffff;
 }
 
-.mfp-s-ready .mfp-preloader {
+.mfp-s-ready .mfp-stylesheeter {
   display: none;
 }
 
@@ -8341,57 +8341,54 @@ html:not(.bx-touch) .akit-btn:hover .icon + .icon, html.bx-touch .akit-btn:activ
   margin: 0;
 }
 
-/* End */
 
-
-/* Start:/local/templates/2019/template_styles.css?1686024625154636*/
 @font-face {
   font-family: "Cera Round";
   font-style: normal;
   font-weight: 400;
-  src: url("/local/templates/2019/font/ceraround/regular.woff2") format("woff2"), url("/local/templates/2019/font/ceraround/regular.woff") format("woff");
+  src: url({% static 'main/fonts/FiraSans-Regular.ttf' %}) format("truetype");
   font-display: swap;
 }
 @font-face {
   font-family: "Cera Round";
   font-style: normal;
   font-weight: 500;
-  src: url("/local/templates/2019/font/ceraround/medium.woff2") format("woff2"), url("/local/templates/2019/font/ceraround/medium.woff") format("woff");
+  src: url({% static 'main/fonts/FiraSans-Medium.ttf' %}) format("truetype");
   font-display: swap;
 }
 @font-face {
   font-family: "Cera Round";
   font-style: normal;
   font-weight: 700;
-  src: url("/local/templates/2019/font/ceraround/bold.woff2") format("woff2"), url("/local/templates/2019/font/ceraround/bold.woff") format("woff");
+  src: url({% static 'main/fonts/Bold1.ttf' %}) format("truetype");
   font-display: swap;
 }
 @font-face {
   font-family: "RotondaC";
   font-style: normal;
   font-weight: 400;
-  src: url("/local/templates/2019/font/rotondac/regular.woff2") format("woff2"), url("/local/templates/2019/font/rotondac/regular.woff") format("woff");
+  src: url({% static 'main/fonts/Roboto-Regular.ttf' %}) format("truetype");
   font-display: swap;
 }
 @font-face {
   font-family: "RotondaC";
   font-style: normal;
   font-weight: 700;
-  src: url("/local/templates/2019/font/rotondac/bold.woff2") format("woff2"), url("/local/templates/2019/font/rotondac/bold.woff") format("woff");
+  src: url({% static 'main/fonts/Roboto-Bold.ttf' %}) format("truetype");
   font-display: swap;
 }
 @font-face {
   font-family: "Literata";
   font-style: normal;
   font-weight: 500;
-  src: url("/local/templates/2019/font/literata/bold.woff2") format("woff2"), url("/local/templates/2019/font/literata/bold.woff") format("woff");
+  src: url({% static 'main/fonts/medium.ttf' %}) format("truetype");
   font-display: swap;
 }
 @font-face {
   font-family: "Literata";
   font-style: italic;
   font-weight: 500;
-  src: url("/local/templates/2019/font/literata/bold-italic.woff2") format("woff2"), url("/local/templates/2019/font/literata/bold-italic.woff") format("woff");
+  src: url({% static 'main/fonts/italic.ttf' %}) format("truetype");
   font-display: swap;
 }
 * {
