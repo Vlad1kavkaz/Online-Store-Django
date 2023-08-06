@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="ru" data-cookie-prefix="BITRIX_SM_SPAR" data-svg-path="https://myspar.ru/local/templates/2019/svg/all.svg?1686024625" data-yandex-key="aaeac644-6b06-4d41-9ff6-054195918752" data-new-sms-delay="60" class="user-non-auth">
+<html lang="ru" data-cookie-prefix="BITRIX_SM_SPAR" data-svg-path="" data-yandex-key="aaeac644-6b06-4d41-9ff6-054195918752" data-new-sms-delay="60" class="user-non-auth">
 <head>
 	<title>Пекарня Хлеб 24</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -14,24 +14,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <link rel="icon" type="image/png" sizes="32x32" href="{% static 'main/img/favicon.svg' %}">
 <link rel="icon" type="image/png" sizes="16x16" href="{% static 'main/img/favicon.svg' %}">
-<link rel="manifest" href="https://s.myspar.ru/favicons/site.webmanifest">
-<link rel="mask-icon" href="https://s.myspar.ru/favicons/safari-pinned-tab.svg" color="#008348">
 <meta name="apple-mobile-web-app-title" content="SPAR">
 <meta name="application-name" content="SPAR">
 <meta name="msapplication-TileColor" content="#008348">
-<meta name="msapplication-config" content="https://s.myspar.ru/favicons/browserconfig.xml">
 <meta name="theme-color" content="#ffffff">
-<meta property="og:url" content="https://myspar.ru/catalog/pekarnya-spar/"/>
 <meta property="og:title" content="Пекарня Хлеб 24 купить с доставкой на дом в интернет-магазине Хлеб 24"/>
 <meta property="og:description" content="Пекарня Хлеб 24 заказать онлайн с доставкой можно в интернет-магазине Хлеб 24. Условия доставки, информация по бонусным картам, спецпредложения на сайте."/>
 <meta property="og:type" content="website"/>
-<meta property="og:image" content="https://s.myspar.ru/local/templates/2019/img/spar-og-logo.png"/>
 <meta property="og:image:type" content="image/png"/>
 <meta property="og:image:width" content="600"/>
 <meta property="og:image:height" content="600"/>
 <meta property="og:locale" content="ru_RU"/>
-<meta property="vk:image" content="https://s.myspar.ru/local/templates/2019/img/spar-og-vk-logo.png"/>
-<meta property="og:image:secure_url" content="https://s.myspar.ru/local/templates/2019/img/spar-og-logo.png"/>
 <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-analytics.js"></script>
 	<script data-skip-moving="true" >
 	addEventListener( 'DOMContentLoaded', function( event ) {
@@ -72,12 +65,35 @@
 							.js-city-confirm-anchor {
 							display: flex;
     						flex-wrap: wrap;
-    						justify-content: space-around;}
-						</style>
-						<div class="header-main"><div class="header-main__catalog dropdown" 1>
+    						justify-content: space-around;
+    						@media (max-width: 767px) {
+  .main_menu {
+    padding: 0px;
+    margin: auto;
 
-  <div class="dropdown" style="">
-  <a class="btn dropdown-toggle btn-sm d-sm-flex" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false" style="border-radius: 12px; height: 55px; border: none; margin: auto 1.5px auto auto">
+  }
+  .header-control{
+  	padding: 2px;
+  }
+  .header-main__search{
+  	padding: 2px;
+  }
+
+  @media (max-width: 767px) {
+  .text_katal {
+    display: none;
+  }
+}
+}
+    						}
+
+						</style>
+						<div class="header-main"><div class="header-main__catalog dropdown main_menu">
+
+
+
+  <div class="dropdown " style="width: flex;">
+  <a class="btn dropdown-toggle btn-sm d-sm-flex btn_katal" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false" style="border-radius: 12px; height: 55px; border: none; margin: auto 1.5px auto auto; width: 40px;">
       <style>.bth:hover{
 			background-color: orange;
 		}
@@ -90,10 +106,10 @@
 
 </style>
 	  <img src="{% static 'main/img/katalog.svg' %}" alt="katalog" style="width: 35px;">
-    <span class="d-none d-sm-flex">Каталог</span>
+    <span class="d-none d-sm-flex text_katal">Каталог</span>
   </a>
   <ul class="dropdown-menu" aria-labelledby="dropdownMenu2" style="width: 320px; border-radius: 12px; max-height: 370px; overflow-y: auto;">
-	<li><a href="{% url 'katalog' %}" style="text-decoration: none;"><button class="dropdown-item" type="button" style="height: 50px;"><style>.dropdown-item:hover{
+	<li><a   style="text-decoration: none;" href="{% url 'hleb' %}"><button class="dropdown-item" type="button" style="height: 50px;"><style>.dropdown-item:hover{
 			background-color: de8014e1d5;
 		}
 		.dropdown-item:active{
@@ -108,7 +124,7 @@
 		}
 </style><img src="{% static 'main/img/bread.svg' %}" style="width: 37px;">
 		<span style="padding: 3px;">Хлеб</span></button></a></li>
-    <li><a href="{% url 'katalog' %}" style="text-decoration: none;"><style>.dropdown-item:hover{
+    <li><a   style="text-decoration: none;" href="{% url 'mangal' %}"><style>.dropdown-item:hover{
 			background-color: #de8014e1;
 		}
 		.dropdown-item:active{
@@ -118,7 +134,7 @@
 			background-color: #de8014e1;
 		}
 </style><button class="dropdown-item" type="button" style="height: 50px;"><img src="{% static 'main/img/barbecue.svg' %}" style="width: 37px;"><span style="padding: 3px;">Блюда на мангале</span></button></a></li>
-    <li><a href="{% url 'katalog' %}" style="text-decoration: none;"><style>.dropdown-item:hover{
+    <li><a   style="text-decoration: none;" href="{% url 'cake' %}"><style>.dropdown-item:hover{
 			background-color: #de8014e1;
 		}
 		.dropdown-item:active{
@@ -128,7 +144,7 @@
 			background-color: #de8014e1;
 		}
 </style><button class="dropdown-item" type="button" style="height: 50px;"><img src="{% static 'main/img/cake.svg' %}" style="width: 37px;"><span style="padding: 3px;">Торты и пирожные</span></button></a></li>
-	  <li><a href="{% url 'katalog' %}" style="text-decoration: none;"><button class="dropdown-item" type="button" style="height: 50px;"><style>.dropdown-item:hover{
+	  <li><a   style="text-decoration: none;" href="{% url 'meat' %}"><button class="dropdown-item" type="button" style="height: 50px;"><style>.dropdown-item:hover{
 			background-color: #de8014e1;
 		}
 		.dropdown-item:active{
@@ -138,7 +154,7 @@
 			background-color: #de8014e1;
 		}
 </style><img src="{% static 'main/img/meat.svg' %}" style="width: 37px;"><span style="padding: 3px;">Пироги мясные</span></button></a></li>
-	  <li><a href="{% url 'katalog' %}" style="text-decoration: none;"><button class="dropdown-item" type="button" style="height: 50px;"><style>.dropdown-item:hover{
+	  <li><a   style="text-decoration: none;" href="{% url 'vegetable' %}"><button class="dropdown-item" type="button" style="height: 50px;"><style>.dropdown-item:hover{
 			background-color: #de8014e1;
 		}
 		.dropdown-item:active{
@@ -148,7 +164,7 @@
 			background-color: #de8014e1;
 		}
 </style><img src="{% static 'main/img/vegetable.svg' %}" style="width: 37px;"><span style="padding: 3px;">Пироги с овощной начинкой</span></button></a></li>
-	  <li><a href="{% url 'katalog' %}" style="text-decoration: none;"><button class="dropdown-item" type="button" style="height: 50px;"><style>.dropdown-item:hover{
+	  <li><a   style="text-decoration: none;" href="{% url 'meatin' %}"><button class="dropdown-item" type="button" style="height: 50px;"><style>.dropdown-item:hover{
 			background-color: #de8014e1;
 		}
 		.dropdown-item:active{
@@ -158,7 +174,7 @@
 			background-color: #de8014e1;
 		}
 </style><img src="{% static 'main/img/meatin.svg' %}" style="width: 37px;"><span style="padding: 3px;">Запекание мяса</span></button></a></li>
-	  <li><a href="{% url 'katalog' %}" style="text-decoration: none;"><button class="dropdown-item" type="button" style="height: 50px;"><style>.dropdown-item:hover{
+	  <li><a   style="text-decoration: none;" href="{% url 'bird' %}"><button class="dropdown-item" type="button" style="height: 50px;"><style>.dropdown-item:hover{
 			background-color: #de8014e1;
 		}
 		.dropdown-item:active{
@@ -168,7 +184,7 @@
 			background-color: #de8014e1;
 		}
 </style><img src="{% static 'main/img/bird.svg' %}" style="width: 37px;"><span style="padding: 3px;">Запекание птицы</span></button></a></li>
-	  <li><a href="{% url 'katalog' %}" style="text-decoration: none;"><button class="dropdown-item" type="button" style="height: 50px;"><style>.dropdown-item:hover{
+	  <li><a   style="text-decoration: none;" href="{% url 'fish' %}"><button class="dropdown-item" type="button" style="height: 50px;"><style>.dropdown-item:hover{
 			background-color: #de8014e1;
 		}
 		.dropdown-item:active{
@@ -178,7 +194,7 @@
 			background-color: #de8014e1;
 		}
 </style><img src="{% static 'main/img/fish.svg' %}" style="width: 37px;"><span style="padding: 3px;">Запекание рыбы</span></button></a></li>
-	  <li><a href="{% url 'katalog' %}" style="text-decoration: none;"><button class="dropdown-item" type="button" style="height: 50px;"><style>.dropdown-item:hover{
+	  <li><a   style="text-decoration: none;" href="{% url 'pot' %}"><button class="dropdown-item" type="button" style="height: 50px;"><style>.dropdown-item:hover{
 			background-color: #de8014e1;
 		}
 		.dropdown-item:active{
@@ -188,7 +204,7 @@
 			background-color: #de8014e1;
 		}
 </style><img src="{% static 'main/img/pot.svg' %}" style="width: 37px;"><span style="padding: 3px;">Жаркое с овощами</span></button></a></li>
-	  <li><a href="{% url 'katalog' %}" style="text-decoration: none;"><button class="dropdown-item" type="button" style="height: 50px;"><style>.dropdown-item:hover{
+	  <li><a   style="text-decoration: none;" href="{% url 'salad' %}"><button class="dropdown-item" type="button" style="height: 50px;"><style>.dropdown-item:hover{
 			background-color: #de8014e1;
 		}
 		.dropdown-item:active{
@@ -198,7 +214,7 @@
 			background-color: #de8014e1;
 		}
 </style><img src="{% static 'main/img/salad.svg' %}" style="width: 37px;"><span style="padding: 3px;">Салаты</span></button></a></li>
-	  <li><a href="{% url 'katalog' %}" style="text-decoration: none;"><button class="dropdown-item" type="button" style="height: 50px;"><style>.dropdown-item:hover{
+	  <li><a   style="text-decoration: none;" href="{% url 'croissant' %}"><button class="dropdown-item" type="button" style="height: 50px;"><style>.dropdown-item:hover{
 			background-color: #de8014e1;
 		}
 		.dropdown-item:active{
@@ -208,7 +224,7 @@
 			background-color: #de8014e1;
 		}
 </style><img src="{% static 'main/img/croissant.svg' %}" style="width: 37px;"><span style="padding: 3px;">Рогалики, булки и печенье</span></button></a></li>
-	  <li><a href="{% url 'katalog' %}" style="text-decoration: none;"><button class="dropdown-item" type="button" style="height: 50px;"><style>.dropdown-item:hover{
+	  <li><a   style="text-decoration: none;" href="{% url 'poppy' %}"><button class="dropdown-item" type="button" style="height: 50px;"><style>.dropdown-item:hover{
 			background-color: #de8014e1;
 		}
 		.dropdown-item:active{
@@ -218,7 +234,7 @@
 			background-color: #de8014e1;
 		}
 </style><img src="{% static 'main/img/poppy.png' %}" style="width: 37px;"><span style="padding: 3px;">Изделия с маковой начинкой</span></button></a></li>
-	  <li><a href="{% url 'katalog' %}" style="text-decoration: none;"><button class="dropdown-item" type="button" style="height: 50px;"><style>.dropdown-item:hover{
+	  <li><a   style="text-decoration: none;" href="{% url 'hotcakes' %}"><button class="dropdown-item" type="button" style="height: 50px;"><style>.dropdown-item:hover{
 			background-color: #de8014e1;
 		}
 		.dropdown-item:active{
@@ -228,7 +244,7 @@
 			background-color: #de8014e1;
 		}
 </style><img src="{% static 'main/img/hotcakes.svg' %}" style="width: 37px;"><span style="padding: 3px;">Блины</span></button></a></li>
-	  <li><a href="{% url 'katalog' %}" style="text-decoration: none;"><button class="dropdown-item" type="button" style="height: 50px;"><style>.dropdown-item:hover{
+	  <li><a   style="text-decoration: none;" href="{% url 'dumplings' %}"><button class="dropdown-item" type="button" style="height: 50px;"><style>.dropdown-item:hover{
 			background-color: #de8014e1;
 		}
 		.dropdown-item:active{
@@ -238,7 +254,7 @@
 			background-color: #de8014e1;
 		}
 </style><img src="{% static 'main/img/dumplings.png' %}" style="width: 37px;"><span style="padding: 3px;">Пельмени и вареники</span></button></a></li>
-	  <li><a href="{% url 'katalog' %}" style="text-decoration: none;"><button class="dropdown-item" type="button" style="height: 50px;"><style>.dropdown-item:hover{
+	  <li><a   style="text-decoration: none;" href="{% url 'milk' %}"><button class="dropdown-item" type="button" style="height: 50px;"><style>.dropdown-item:hover{
 			background-color: #de8014e1;
 		}
 		.dropdown-item:active{
@@ -248,7 +264,7 @@
 			background-color: #de8014e1;
 		}
 </style><img src="{% static 'main/img/milk.svg' %}" style="width: 37px;"><span style="padding: 3px;">Молоко, масло, сметана и творог</span></button></a></li>
-	  <li><a href="{% url 'katalog' %}" style="text-decoration: none;"><button class="dropdown-item" type="button" style="height: 50px;"><style>.dropdown-item:hover{
+	  <li><a   style="text-decoration: none;" href="{% url 'honey' %}"><button class="dropdown-item" type="button" style="height: 50px;"><style>.dropdown-item:hover{
 			background-color: #de8014e1;
 		}
 		.dropdown-item:active{
@@ -258,7 +274,7 @@
 			background-color: #de8014e1;
 		}
 </style><img src="{% static 'main/img/honey.svg' %}" style="width: 37px;"><span style="padding: 3px;">Мёд</span></button></a></li>
-	  <li><a href="{% url 'katalog' %}" style="text-decoration: none;"><button class="dropdown-item" type="button" style="height: 50px;"><style>.dropdown-item:hover{
+	  <li><a   style="text-decoration: none;" href="{% url 'hotdrinks' %}"><button class="dropdown-item" type="button" style="height: 50px;"><style>.dropdown-item:hover{
 			background-color: #de8014e1;
 		}
 		.dropdown-item:active{
@@ -272,33 +288,38 @@
 </div>
 </div>
 
-	<div style="display: inline-block;"><button style="border: solid 1px #efefef; background-color: white; height: 56px; border-radius: 12px; width: flex;" class=" header-main__search header-main__search ">
-		<img src="{% static 'main/img/search.svg' %}" alt="search"  style="width: 35px; margin: 7px;" id="block1">
+
 		<style>
+		.search_form {
+    background: white;
+    color: black;
+    border-color: orangered;
+    padding: auto;
+    text-align: center;
+    border-radius: 7px;
+    height: 52px;
+    display: inline-block;
+    text-align: center;
+    margin: auto;
+	bottom: auto;
+  }
 			@media (max-width: 767px) {
-  .search-span {
+  .search_form_btn {
     display: none;
   }
+  .search_form_input{
+  	width: 50px;
+  }
 }
-		</style>
-		<span class="search-span" style="margin: 5px;">Поиск</span>
-	</button></div>
-<div class="header-main__get js-order-blocks d-none d-md-flex"><a href="{% url 'katalog' %}"><div class="get-order-block js-get-order d-lg-flex d-xl-none d-md-none">
-			<span class="get-order-block__stub">
-				<span>Закажи доставку</span>
-				<span>или забери в магазине</span>
-			</span>
-		</div></a><div class="get-order-blocks d-none d-xl-flex"><div class="get-order-blocks__item active"><div class="get-order-block js-get-order active" data-way="delivery" style="align-items: center;">
-			<span class="get-order-block__title">
-				<img src="{% static 'main/img/delivery.svg' %}" alt="delivery" style="width: 45px;">				<span>Доставка</span>
-			</span></div></div><div class="get-order-blocks__item"><div class="get-order-block js-get-order" data-way="pickup">
-			<span class="get-order-block__title">
-				<img src="{% static 'main/img/klik.svg' %}" alt="klik" style="width: 30px;">				<span>Закажи и забери</span>
-			</span></div></div></div></div><div class="header-main__lk" style="padding: auto;"><a href="/personal/" class="header-control js-open-auth">
+		</style><form action="{% url 'search' %}" method="get" class="search_form" style="height: 52px;">
+					<input type="search" type="text" name="q" placeholder="Поиск" class="search_form text-left search_form_input" style="padding: 7px;">
+					<button type="submit" class="search_form_btn" style="border-color: orangered; border-radius: 7px; background: white; height: 52px; width: 52px;"><img src="{% static 'main/img/search.svg' %}" style="width: 25px;"></button>
+				</form>
+<div class="header-main__lk main_menu" style="padding: auto; width: flex;">{% if request.user.is_authenticated %}<a href="{% url 'account' %}" class="header-control js-open-auth">{% else %}<a href="{% url 'login' %}" class="header-control js-open-auth">{% endif %}
 		<img src="{% static 'main/img/profile.svg' %}" alt="profile" style="width: 27px;">		<span class="header-control__text d-none">
 			<small><span class="header-control__text-main">Войти</span></small>
 		</span>
-	</a></div><div class="header-main__basket" style="padding: auto"><a href="/order/" class="header-control js-header-basket">
+	</a></div><div class="header-main__basket main_menu" style="padding: auto; width: flex;"><a href="/cart/" class="header-control js-header-basket">
 	<span class="header-control__icon"><img src="{% static 'main/img/backet.svg' %}" alt="backet" style="width: 27px;"></span><span class="header-control__text d-none d-lg-flex">
 			<span class="header-control__text-main">Корзина</span>
 		</span></a></div></div>
@@ -319,19 +340,13 @@
 								<div class="footer-main__menu">
 									<div class="row">
 										<div class="col-5"><nav class="menu-footer"><div class="menu-footer__item">
-			<a class="menu-footer__link" href="/catalog/">
+			<a class="menu-footer__link" href="/">
 				Каталог товаров			</a>
 		</div><div class="menu-footer__item">
-			<a class="menu-footer__link" href="/company/">
+			<a class="menu-footer__link" href="/about">
 				О компании			</a>
-		</div><div class="menu-footer__item">
-			<a class="menu-footer__link" href="/shipping/">
-				Доставка и оплата			</a>
-		</div><div class="menu-footer__item">
-			<a class="menu-footer__link" href="/contacts/">
-				Контакты			</a>
-		</div><div class="menu-footer__item">
-			<a class="menu-footer__link" href="/personal/">
+		</div><div class="menu-footer__item">{% if request.user.is_authenticated %}
+			<a class="menu-footer__link" href="/accounts/profile/">{% else %}<a href="{% url 'login' %}" class="menu-footer__link">{% endif %}
 				Личный кабинет			</a>
 		</div></nav></div>
 

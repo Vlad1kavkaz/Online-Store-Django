@@ -1,23 +1,24 @@
-"""
-URL configuration for hleb project.
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/4.2/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
-
 from django.urls import path
 from . import views
 
-urlpatterns = [
 
+urlpatterns = [
+    path('hleb', views.hleb, name='hleb'),
+    path('bluda-na-mangale', views.mangal, name='mangal'),
+    path('torti-i-pirozhnie', views.cake, name='cake'),
+    path('pirogi-myasnie', views.meat, name='meat'),
+    path('pirogi-s-ovoshnoy-nachinkoy', views.vegetable, name='vegetable'),
+    path('zapekanie-myasa', views.meatin, name='meatin'),
+    path('zapekanie-ptitsi', views.bird, name='bird'),
+    path('zapekanie-ribi', views.fish, name='fish'),
+    path('zharkoe-s-ovoshami', views.pot, name='pot'),
+    path('salati', views.salad, name='salad'),
+    path('rogaliki-bulki-i-pechenie', views.croissant, name='croissant'),
+    path('izdeliya-s-makovoy-nachinkoy', views.poppy, name='poppy'),
+    path('blini', views.hotcakes, name='hotcakes'),
+    path('pelmeni-i-vareniki', views.dumplings, name='dumplings'),
+    path('tvorog', views.milk, name='milk'),
+    path('med', views.honey, name='honey'),
+    path('goryachie-napitki', views.hotdrink, name='hotdrinks'),
 ]
+

@@ -1,0 +1,100 @@
+{% extends "main/layout.html" %}
+{% load static %}
+
+{% block content %}
+<div class="content">
+    <div class="container ">
+        <nav class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList"><span class="breadcrumbs__item d-inline-flex" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+							<a itemprop="item" class="breadcrumbs__link" href="/">
+								<span itemprop="name">Главная</span>
+							</a>
+							<meta itemprop="position" content="1" />
+						</span><span class="breadcrumbs__item d-inline-flex" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+							<a itemprop="item" class="breadcrumbs__link" href="/cart">
+								<span itemprop="name">Корзина</span>
+							</a>
+							<meta itemprop="position" content="2" />
+						</span></nav>
+<h1>Корзина покупок</h1>
+<table class="cart">
+
+  <tbody>
+  {% for item in cart %}
+    {% with product=item.product %}
+  <style>
+      .cart_prod{
+        text-align: center;
+        margin: auto;
+        padding: 10px;
+        max-width: 200px;
+
+      }
+      .num{
+        text-align: center;
+        margin: auto;
+        padding: 10px;
+        max-width: 52px;
+
+      }
+
+  </style>
+    <div style="background: #fffbef; display: flex; margin: auto; padding: 7px;">
+      <div style="text-align: center;" class="cart_prod">
+
+                <img src="{{ product.image.url }}" style="width: 56px;">
+
+            </div>
+            <div style="text-align: center;" class="cart_prod">{{ product.title }}</div>
+            <div class="cart_prod">
+                <style>
+                    #id_quantity{
+                        border-color: orange;
+                        border-radius: 7px;
+                        width: 40px;
+                        text-align: center;
+                    }
+
+
+                </style>
+              <form action="{% url 'cart:cart_add' product.id %}" method="post" class="form" class="cart_prod">
+                {{ item.update_quantity_form.quantity }}
+                {{ item.update_quantity_form.update }}
+
+                  <button style="background: #fffbef; border: none;">
+                    <img src="{% static 'cart/update.svg' %}" style="width: 23px; margin: auto;"
+                  </button>
+
+                {% csrf_token %}
+              </form>
+            </div >
+            <div style="text-align: center;" class="cart_prod"><a href="{% url 'cart:cart_remove' product.id %}"><img src="{% static 'cart/delete.svg' %}" style="width: 30px; margin: auto;"></a></div>
+
+            <div class="num cart_prod" style="text-align: center;">{{ item.cost }} ₽</div>
+
+          </div>
+        {% endwith %}
+      {% endfor %}
+      <div class="total" style="display: flex;">
+          <style>
+              .itog{
+                    margin: auto;
+              }
+
+          </style>
+        <div style="font-size: 30px; text-align: center;" class="itog" >Итого: </div>
+
+        <div class="num itog" style="text-align: center; font-size: 30px;">{{ cart.get_total_price }} ₽</div>
+      </div>
+    </tbody>
+  </table>
+  <p class="text-right">
+      <style>
+          .aa {
+                width: 30px;
+          }
+      </style>
+      <a href="{% url 'home_page' %}" class="btn aa" style="margin: 5px; backgound: white; border-color: orangered; color: white;">В каталог</a>
+    {% if request.user.is_authenticated %}<a href="order/" class="btn aa" style="width: 40px; margin: 5px; backgound: white; border-color: orangered; color: white" style="">{% else %}<a href="{% url 'login' %}" class="btn aa" style="width: 40px; margin: 5px; backgound: white; border-color: orangered; color: white" style="">{% endif %}Оформить заказ</a>
+  </p>
+    </div></div>
+{% endblock %}

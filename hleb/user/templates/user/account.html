@@ -1,0 +1,62 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="content ">
+					<div class="container ">
+
+        <div class=""><div class="container-spread__inner"><nav class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList"><span class="breadcrumbs__item d-inline-flex" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+							<a itemprop="item" class="breadcrumbs__link" href="/">
+								<span itemprop="name">Главная</span>
+							</a>
+							<meta itemprop="position" content="1" />
+						</span><span class="breadcrumbs__item d-inline-flex" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+							<a itemprop="item" class="breadcrumbs__link" href="/accounts">
+								<span itemprop="name">Профиль</span>
+							</a>
+							<meta itemprop="position" content="2" />
+						</span></nav><div class="custom-h1">
+		<div class="row align-items-center">
+			<div class="col">
+				<h1>Пекарня Хлеб 24</h1>
+			</div></div></div></div>
+			</div>
+<div style="boreder-radius: 20px; border-color: orange;"><style>
+                          .helptext{
+                            display: none
+                          }
+                          #id_username, #id_password1, #id_password2, #id_email, #id_phone{
+                            border-color: orangered;
+                            border-radius: 7px;
+                            height: 52px;
+
+                          }
+                          .regi{
+                            border-color: orangered;
+                            border-radius: 7px;
+                            height: 52px;
+                            background: none;
+                            width: 150px
+                          }
+                          .form-label {
+    display: inline-block;
+    min-width: 150px;
+    vertical-align: center;
+}
+                      </style>
+	<h2>Изменить данные аккаунта</h2>
+                     {% csrf_token %}
+                      {% for f in form %}
+<h4><label class="form-label" for="{{ f.id_for_label }}">{{f.label}}: </label>{{ f }}</h4>
+<div class="form-error">{{ f.errors }}</div>
+{% endfor %}
+						<button type="submit" class="regi" style="width: 170px; height: flex; display: inline-block;"><img src="{% static 'user/change.svg' %}" style="width: 30px;  margin: 5px;">Изменить</button></div>
+						<a href="{% url 'logout' %}"><button type="submit" class="regi" style="margin: 50px; background: #e83333;"><img src="{% static 'user/logout.svg' %}" style="width: 30px; margin: 5px;">Выйти</button></a>
+
+                  </form>
+
+                    </div></div>
+
+{% endblock %}
+
