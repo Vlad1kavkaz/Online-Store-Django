@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.decorators.http import require_POST
 from product.models import Product
+
 from .cart import Cart
 from .forms import CartAddProductForm, AdressForm
 from telegram import Bot
@@ -32,6 +33,7 @@ def cart_detail(request):
 
 def order_show(request):
     cart = Cart(request)
+
     initial_values = {'adress': 'Самовывоз'}
     form = AdressForm(request.POST or None, initial=initial_values)
 
@@ -40,12 +42,14 @@ def order_show(request):
         delivery = form.cleaned_data['delivery']
         adress = form.cleaned_data['adress']
         time_date = form.cleaned_data['time_date']
+        email = request.user.email
 
         order_info = []
         for item in cart.__iter__():
             order_info.append(f"{item['product'].title} ({item['quantity']} шт.)")
 
         message = f"Новый заказ:\nТелефон: {phonenumber}\n"
+        message += f"Почта: {email}\n"
         if delivery:
             message += f"Адрес: {adress}\n"
         else:
