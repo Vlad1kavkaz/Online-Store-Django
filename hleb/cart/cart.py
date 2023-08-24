@@ -2,18 +2,23 @@ from django.conf import settings
 from product.models import Product
 
 
+
+
 class Cart(object):
 
     def __init__(self, request):
         """
         Инициализация корзины
         """
+
         self.session = request.session
         cart = self.session.get(settings.CART_SESSION_ID)
         if not cart:
             # сохраняем ПУСТУЮ корзину в сессии
             cart = self.session[settings.CART_SESSION_ID] = {}
         self.cart = cart
+        self.session.order_flag = False
+
 
     def __iter__(self):
         """
@@ -74,3 +79,8 @@ class Cart(object):
         # очищаем корзину в сессии
         del self.session[settings.CART_SESSION_ID]
         self.save()
+
+    def order(self):
+        self.session.order_flag = True
+        self.save()
+

@@ -1,11 +1,18 @@
+import datetime
+
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.decorators.http import require_POST
 from product.models import Product
+from django.contrib import messages
 
 from .cart import Cart
 from .forms import CartAddProductForm, AdressForm
 from telegram import Bot
 from django.conf import settings
+
+flag = False
+now = datetime.datetime.now()
+
 
 @require_POST
 def cart_add(request, product_id):
@@ -32,6 +39,7 @@ def cart_detail(request):
 
 
 def order_show(request):
+
     cart = Cart(request)
 
     initial_values = {'adress': 'Самовывоз'}
@@ -43,6 +51,8 @@ def order_show(request):
         adress = form.cleaned_data['adress']
         time_date = form.cleaned_data['time_date']
         email = request.user.email
+        comment = form.cleaned_data['comment']
+
 
         order_info = []
         for item in cart.__iter__():
@@ -55,12 +65,33 @@ def order_show(request):
         else:
             message += "Самовывоз\n"
         message += "Товары: " + "\n ".join(order_info) + "\n"
-        message += f"Дата и время: {time_date}"
+        message += f"Дата и время: {time_date}\n"
+        if comment != '':
+            message += f"Комментарий к заказу: {comment}\n"
 
         # Отправка сообщения через Telegram бота
         bot = Bot(token=settings.TELEGRAM_BOT_TOKEN)
         chat_id = settings.TELEGRAM_CHAT_ID
         bot.send_message(chat_id=chat_id, text=message)
+        for item in cart.__iter__():
+            cart_remove(request, item['product'].id)
+        flag = True
+        now = datetime.datetime.now()
+
+
+        return redirect('home_page')
 
 
     return render(request, 'cart/order.html', {'cart': cart, 'form': form})
+
+def flag():
+
+    order_flag = {'flag': flag,
+                  'now': now,
+
+                  }
+
+    return order_flag
+
+
+

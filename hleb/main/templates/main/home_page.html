@@ -18,7 +18,42 @@
 			<div id="imageContainer">
 
 							<div class="d-none">
-</div></div><div class="catalog-sections matrix matrix--big row"><style>
+</div></div>
+
+
+
+<script>
+    setTimeout(function() {
+        var popup = document.querySelector('.popup');
+        popup.style.display = 'none';
+
+
+    }, 10000);
+</script>
+
+{% if flag %}
+
+    <div class="popup">
+        <div style="position: fixed; bottom: 20px; right: 20px; background: white; border-radius: 5px; padding: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); z-index: 9999; text-align: center;">
+            <img src="{% static 'cart/green_flag.png' %}" alt="Success Image" style="width: 20px; height: 20px; margin-right: 10px;">
+            <p style="display: inline-block; vertical-align: middle; margin-top: auto; margin-bottom: auto;">Заказ успешно оформлен!</p>
+            <button type="button" class="close" aria-label="Close" onclick="closePopup()" style="background: white; border-color: white; border-width: 0px;">
+                <span aria-hidden="true"><a class="btn-close"></a></span>
+            </button>
+        </div>
+    </div>
+
+{% endif %}
+<script>
+    function closePopup() {
+        var popup = document.querySelector('.popup');
+        popup.style.display = 'none';
+    }
+</script>
+
+
+
+							<div class="catalog-sections matrix matrix--big row"><style>
 .card {
   background-color: #fff;
 }
