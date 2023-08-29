@@ -54,10 +54,56 @@
 <header class="header">
 						<div class="header__main js-header-main">
 				<div class="container-spread">
-					<div class="header-table">
-						<div class="header-table__logo"><a class="logo" href="/" title="Хлеб 24">
-		<img src="{% static 'main/img/logo.png' %}" alt="logo" style="text-align: center;">
-	</a></div></div>
+					<div class="header-table" style="display: flex;">
+    <div class="header-table__logo logotel logoimage">
+        <a class="logo" href="/" title="Хлеб 24">
+            <img src="{% static 'main/img/logo.png' %}" alt="logo" style="text-align: center;">
+        </a>
+    </div>
+    <button class="phone-button">
+        <a href="tel:+79104050222" style="text-decoration: none;">
+            <img src="{% static 'main/img/telephone.svg' %}" style="width: 35px;">
+            <h4><span class="text">Позвоните нам</span></h4>
+        </a>
+    </button>
+</div>
+
+<style>
+.header-table {
+    display: flex;
+    justify-content: space-between;
+}
+
+.phone-button {
+    display: flex;
+    border-color: lightgreen;
+    border-width: 2px;
+    background: #13e828;
+    border-radius: 12px;
+    width: auto;
+    padding: 7px;
+}
+
+.text {
+    color: white;
+}
+
+@media only screen and (min-width: 768px) {
+    .header-table {
+        justify-content: space-around;
+        margin-left: auto;
+    }
+
+    .phone-button {
+        margin-right: auto;
+    }
+    .logoimage {
+    	margin-left: auto;
+    	margin-right: auto;
+    }
+}
+</style>
+
 				</div>
 			</div>
 			<div class="header__bottom js-header-fixed">
@@ -360,7 +406,7 @@
 											<div class="consult-block" style="margin-left: auto; margin-right: auto; text-align: center;">
 												<div class="consult-block__title">Консультации по заказу:</div>
 												<div class="consult-block__phone">
-													<a href="tel:88005001329">8 910 40 50 222</a>
+													<a href="tel:89104050222">8 910 40 50 222</a>
 												</div>
 												<div class="consult-block__desc">Ежедневно с 8:00 до 23:00</div>
 											</div>
