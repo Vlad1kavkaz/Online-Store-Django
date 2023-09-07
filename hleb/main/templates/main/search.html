@@ -44,7 +44,24 @@
 
       <form action="{% url 'cart:cart_add' product_id=el.id %}" method="post" class="form">
         <style>
-          /* ... стили формы ... */
+           form{
+  vertical-align: bottom;
+position: absolute;
+bottom: 20px;
+ }
+  #id_quantity{
+   border-radius: 7px;
+   width: 40px;
+   text-align:center;
+   border-color: orange;
+   margin-left: auto;
+   margin-right: auto;
+  }
+  select{
+   margin-left: auto;
+   margin-right: auto;
+  }
+
         </style>
         {{ cart_product_form.quantity }}
         {% csrf_token %}
@@ -59,7 +76,7 @@
     </div>
   {% endfor %}
 {% else %}
-  <h2 style="text-align: center;"><img src="{% static 'main/img/sad.svg' %}" style="width: 35px; margin: 7px;">Упс, ничего не нашлось...
+  <h2 style="text-align: center;"><img src="{% static 'main/img/sad.svg' %}" style="width: 35px; margin: 7px;">Извините, ничего не нашлось...
   Попробуйте изменить свой запрос</h2>
 {% endif %}</div></div></div></div>
 
